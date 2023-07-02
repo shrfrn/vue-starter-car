@@ -5,7 +5,7 @@ export default {
             <h1>Car List</h1>
             <ul>
                 <li v-for="car in cars">
-                    <pre>{{ car }}</pre>
+                    <CarPreview :car="car"/>
                 </li>
             </ul>
         </section>
