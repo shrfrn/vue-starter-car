@@ -11,6 +11,7 @@ export default {
                 v-if="selectedCar" 
                 :car="selectedCar" 
                 @close="selectedCar = null"/>
+            <CarEdit @save="saveCar" />
         </section>
     `,
     data() {
@@ -29,6 +30,10 @@ export default {
         },
         selectCar(carId) {
             this.selectedCar = this.cars.find(car => car.id === carId)
+        },
+        saveCar(carToSave) {
+            carService.save(carToSave)
+                .then(savedCar => this.cars.push(savedCar))
         }
     },
     created() {
