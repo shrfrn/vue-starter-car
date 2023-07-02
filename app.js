@@ -1,11 +1,11 @@
 import { createApp } from './lib/vue-v3.3.4.js'
 
+import CarIndex from './cmps/CarIndex.js'
+
 const options = {
     template: `
     <div>
-        <header class="app-header">
-            <h1>{{ title }}</h1>
-        </header>
+        <CarIndex />
     </div>
     `,
     data() {
@@ -15,4 +15,7 @@ const options = {
     },
 }
 const app = createApp(options)
+
+app.component('CarIndex', CarIndex)
+
 app.mount('#app')
