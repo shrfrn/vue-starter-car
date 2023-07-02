@@ -9,8 +9,13 @@
 @import 'base/forms.css';
 
 /* Components */
+
+@import 'cmps/app.css';
 /* @import 'cmps/AppHeader.css';
 @import 'cmps/SimpleCounter.css';
 @import 'cmps/UserMsg.css'; */
+@import 'cmps/AppHeader.css';
+@import 'cmps/AppFooter.css';
+
 @import 'cmps/CarList.css';
 @import 'cmps/CarPreview.css';
