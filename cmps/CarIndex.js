@@ -4,7 +4,7 @@ export default {
     template: `
         <section class="car-index">
             <h1>Cars</h1>
-            <pre>{{ cars }}</pre>
+            <CarList :cars="cars"/>
         </section>
     `,
     data() {
