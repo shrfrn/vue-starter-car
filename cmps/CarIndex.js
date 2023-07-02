@@ -3,12 +3,20 @@ import { carService } from '../services/car.service.js'
 export default {
     template: `
         <section class="car-index">
-            <CarList @remove="removeCar" :cars="cars"/>
+            <CarList 
+                :cars="cars"
+                @select="selectCar" 
+                @remove="removeCar" /> 
+            <CarDetails 
+                v-if="selectedCar" 
+                :car="selectedCar" 
+                @close="selectedCar = null"/>
         </section>
     `,
     data() {
         return {
             cars: null,
+            selectedCar: null,
         }
     },
     methods: {
@@ -18,6 +26,9 @@ export default {
                     const idx = this.cars.findIndex(car => car.id === carId)
                     this.cars.splice(idx, 1)
                 })
+        },
+        selectCar(carId) {
+            this.selectedCar = this.cars.find(car => car.id === carId)
         }
     },
     created() {

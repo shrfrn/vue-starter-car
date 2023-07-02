@@ -6,6 +6,7 @@ export default {
                 <li v-for="car in cars">
                     <CarPreview :car="car"/>
                     <section class="actions">
+                        <button @click="onShowDetails(car.id)">Details</button>
                         <button @click="onRemoveCar(car.id)">x</button>
                     </section>
                 </li>
@@ -15,6 +16,9 @@ export default {
     methods: {
         onRemoveCar(carId) {
             this.$emit('remove', carId)
-        }
+        },
+        onShowDetails(carId) {
+            this.$emit('select', carId)
+        },
     }
 }

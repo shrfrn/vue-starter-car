@@ -4,6 +4,7 @@ import AppHeader from './cmps/AppHeader.js'
 import AppFooter from './cmps/AppFooter.js'
 
 import CarIndex from './cmps/CarIndex.js'
+import CarDetails from './cmps/CarDetails.js'
 
 import CarList from './cmps/CarList.js'
 import CarPreview from './cmps/CarPreview.js'
@@ -27,6 +28,7 @@ const options = {
 const app = createApp(options)
 
 app.component('CarIndex', CarIndex)
+app.component('CarDetails', CarDetails)
 
 app.component('AppHeader', AppHeader)
 app.component('AppFooter', AppFooter)
